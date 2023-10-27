@@ -1,8 +1,8 @@
 import React from 'react'
 import { projects } from '../data/data'
 import img from '../../assets/project-images/0.jpg'
-import ProjectBanner from './ProjectBanner'
-
+import ProjectsBanner from './ProjectsBanner'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import '../../styles/projects.css'
 
@@ -10,14 +10,17 @@ const ProjectsPage = () => {
 
   return (
     <>
-    <ProjectBanner className="py-8"/>
+    <ProjectsBanner className="py-8"/>
     <div className='container'>
       {projects.map((project, index) => (
         <motion.div
         whileHover={{ scale: 1.1}}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-        <a href={`project?${index}`} class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+        <Link to={
+        `${index}`
+        }>
+        <a class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
         <div className='card'>
           <div className='image'>
           <img class="h-auto max-w-full rounded-lg" src={img} alt="" />
@@ -28,6 +31,7 @@ const ProjectsPage = () => {
           </div>
         </div>
         </a>
+        </Link>
         </motion.div>
       ))}
     </div>

@@ -12,7 +12,7 @@ import NavBar from './components/defaults/NavBar';
 import NoPage from './components/NoPage';
 import FooterBar from './components/defaults/FooterBar';
 import ContactPage from './components/contact/ContactPage';
-
+import ProjectPage from './components/projects/ProjectPage';
 import Tracker from './animations/Tracker';
 
 function App() {
@@ -41,6 +41,8 @@ function App() {
         <Route path='projects' element={<ProjectsPage />}>
         </Route>
         <Route path='contact' element={<ContactPage />}>
+        </Route>
+        <Route path={'projects/:id'} element={<ProjectPage/>}>
         </Route>
         <Route path='*' element={<NoPage />}>
         </Route>

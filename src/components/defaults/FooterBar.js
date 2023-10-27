@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Footer } from 'flowbite-react';
 import { BsGithub, BsLinkedin, BsTwitter, BsMedium } from 'react-icons/bs';
 
@@ -7,7 +7,7 @@ const FooterBar = () => {
     <Footer className='bg-transparent' container>
       <div className="w-full">
         <Footer.Divider />
-        <div className="w-full sm:flex sm:items-center sm:justify-between px-10">
+        <div className="w-full sm:flex sm:items-center sm:justify-between px-5 sm:px-10">
           <Footer.Copyright
             by="AbdelrahmanMohamed™"
             href="/"
@@ -34,7 +34,7 @@ const FooterBar = () => {
               href='https://medium.com/@AMustafa4983'
               icon={BsMedium}
               className='hover:text-white'
-            >              
+            >
             </Footer.Icon>
           </div>
         </div>
@@ -43,4 +43,4 @@ const FooterBar = () => {
   )
 }
 
-export default FooterBar
+export default FooterBar;

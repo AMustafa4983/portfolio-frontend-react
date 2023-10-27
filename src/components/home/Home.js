@@ -14,9 +14,9 @@ const Home = () => {
   return (
     <>
     <div className='banner font-rubik text-white'>
-      <div className='grid grid-cols-2 grid-row-1 grid-flow-col gap-2'>
+      <div className='grid grid-cols-1 gap-2 md:grid-cols-2'>
 
-        <div className='col-span-1 row-span-1 h-128 w-128 p-10 py-24 inset-0 text-center'>
+        <div className='h-128 p-10 py-24 text-center'>
           <p className='pt-32 text-5xl'>
           { sentence.map((char, index) =>{
             return(
@@ -41,9 +41,8 @@ const Home = () => {
             </button>
           </Link>
         </div>
-
  
-        <div className='col-span-2 row-span-1'>
+        <div className='text-center md:text-left'>
           <motion.div
             className="box"
             initial={{ opacity: 0, scale: 0.5 }}
@@ -53,13 +52,12 @@ const Home = () => {
               delay: 0.7,
               ease: [0, 0.71, 0.2, 1.01]
             }}
-            >
-          <div className='rounded-lg border-white border-4 border-line m-[100px]'>
-                <img src={myphoto} alt='Me' />
-          </div>
+          >
+            <div className='rounded-lg border-white border-4 border-line m-10 md:m-20'>
+              <img src={myphoto} alt='Me' />
+            </div>
           </motion.div>
         </div>
-
       </div>
     </div>
     <Intro />
@@ -69,4 +67,5 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
+
