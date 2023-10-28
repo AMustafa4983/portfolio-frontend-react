@@ -1,5 +1,5 @@
 import './App.css';
-
+import React from 'react';
 
 import {  Routes, Route } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -11,9 +11,9 @@ import ProjectsPage from './components/projects/ProjectsPage';
 import NavBar from './components/defaults/NavBar';
 import NoPage from './components/NoPage';
 import FooterBar from './components/defaults/FooterBar';
-import ContactPage from './components/contact/ContactPage';
 import ProjectPage from './components/projects/ProjectPage';
 import Tracker from './animations/Tracker';
+
 
 function App() {
 
@@ -40,9 +40,7 @@ function App() {
         </Route>
         <Route path='projects' element={<ProjectsPage />}>
         </Route>
-        <Route path='contact' element={<ContactPage />}>
-        </Route>
-        <Route path={'projects/:id'} element={<ProjectPage/>}>
+        <Route path={'projects/project/:id'} element={<ProjectPage/>}>
         </Route>
         <Route path='*' element={<NoPage />}>
         </Route>

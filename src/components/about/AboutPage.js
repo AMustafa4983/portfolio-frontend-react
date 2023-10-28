@@ -2,8 +2,8 @@ import React from 'react'
 import AboutBanner from './AboutBanner'
 
 import Story from './Story'
-import Education from './Education'
-import Experience from './Experience'
+import Education from '../data/Education'
+import Experience from '../data/Experience'
 const AboutPage = () => {
 
   return (

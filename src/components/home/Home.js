@@ -3,7 +3,7 @@ import myphoto from '../../assets/images/MyPhoto.png'
 import Intro from './Intro'
 import Skills from './Skills'
 import Contact from './Contact'
-import { Link } from "react-router-dom";
+import CV from '../data/CV'
 import { motion } from "framer-motion";
 import TextPopUp from '../../animations/TextPopUp'
 import '../../styles/home.css'
@@ -33,13 +33,7 @@ const Home = () => {
           <p className='text-lg px-10 text-left'>
           💡Let's explore possibilities!
           </p>
-          <Link to='/download-cv'>
-            <button class="inline-flex items-center justify-center p-0.5 mt-6 mb-2 mr-2 overflow-hidden text-lg font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-red-500 group-hover:from-purple-500 group-hover:to-red-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
-              <span class="px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                Donwload My Resume
-              </span>
-            </button>
-          </Link>
+          <CV/>
         </div>
  
         <div className='text-center md:text-left'>
