@@ -40,7 +40,7 @@ function App() {
         </Route>
         <Route path='projects' element={<ProjectsPage />}>
         </Route>
-        <Route path={'projects/project/:id'} element={<ProjectPage/>}>
+        <Route path={'projects/:slug'} element={<ProjectPage/>}>
         </Route>
         <Route path='*' element={<NoPage />}>
         </Route>

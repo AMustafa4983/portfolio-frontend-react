@@ -1,36 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import { Carousel } from 'flowbite-react';
 import { BsGithub } from 'react-icons/bs';
 import { GiCircuitry } from 'react-icons/gi';
-
+import { projects } from '../data/data';
 
 const ProjectPage = () => {
-  const [project, setProject] = useState({
-    title: '',
-    skills: [],
-    hint: '',
-    github_link: '',
-    demo_link: '',
-    images: [],
-    description: '',
-  });
 
-  var { id } = useParams();
+  const { slug } = useParams();
+  const project = projects[slug];
 
-  useEffect(() => {
-    fetch(`http://127.0.0.1:8000/get-project/${id}`)
-       .then((res) => res.json())
-       .then((data) => {
-          console.log(data);
-          setProject(data[0]);
-       })
-       .catch((err) => {
-          console.log(err.message);
-       });
- }, [id]);
-
-  
   return (
     <>
       <div>
@@ -60,6 +38,8 @@ const ProjectPage = () => {
           Github Code
           <BsGithub className="m-1" />
         </a>
+        {project.demo_link ?
+
         <a
           href={project.demo_link}
           className="mx-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-green-400 rounded-lg hover:bg-green-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
@@ -67,6 +47,9 @@ const ProjectPage = () => {
           Try Demo
           <GiCircuitry className="m-1" />
         </a>
+        :
+        <></>
+        }
         <h1 className="text-white text-xl mt-6">Project Screenshots</h1>
         <div className="flex justify-center">
           <Carousel className="mt-8 w-[80%] h-[30em]">

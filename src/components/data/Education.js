@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from 'react';
 import { Timeline } from 'flowbite-react';
+import { education } from './data';
 
-
-function ProjectsCard() {
-    const [Education, setEducation] = useState([]);
-
-    useEffect(() => {
-        fetch('http://127.0.0.1:8000/get-education/')
-            .then((res) => res.json())
-            .then((data) => {
-                console.log(data);
-                setEducation(data);
-            })
-            .catch((err) => {
-                console.log(err.message);
-            });
-    }, []);
+function Education() {
 
     return (
         <>
@@ -25,7 +11,7 @@ function ProjectsCard() {
                 <Timeline.Item>
                     <Timeline.Point />
 
-                    {Education.map((element) => (
+                    {education.map((element) => (
                         <Timeline.Content className='items-left text-left pl-2'>
 
                             <Timeline.Time className='text-white'>
@@ -51,6 +37,6 @@ function ProjectsCard() {
     );
 }
 
-export default ProjectsCard;
+export default Education;
 
 
